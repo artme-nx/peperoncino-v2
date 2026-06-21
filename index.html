@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Peperoncino Kitchen &amp; Bar — Šibenik</title>
+<meta name="description" content="Peperoncino Kitchen & Bar — talijanska kuhinja i koktel bar pod kamenim svodovima Šibenika. Večeri uz pastu, sharing plates i autorske koktele. Mesarske stube 2." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#16100E;
+  --bg2:#1F1714;
+  --ember:#D9461F;
+  --brass:#C99B5B;
+  --cream:#EFE4D4;
+  --muted:#9C8C7C;
+  --line:rgba(201,155,91,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--cream);
+  font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.05;letter-spacing:0}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:.7rem;letter-spacing:.42em;text-transform:uppercase;color:var(--brass);font-weight:500;font-family:'DM Sans'}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:26px 0;transition:background .5s ease,padding .5s ease,box-shadow .5s ease}
+header.solid{background:rgba(22,16,14,.85);backdrop-filter:blur(16px);padding:16px 0;box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;letter-spacing:.04em;color:var(--cream)}
+.brand b{color:var(--ember);font-style:italic}
+.nav-links{display:flex;gap:38px;align-items:center}
+.nav-links a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);opacity:.82;transition:opacity .3s,color .3s}
+.nav-links a:hover{opacity:1;color:var(--brass)}
+.cta{display:inline-block;border:1px solid var(--brass);color:var(--brass) !important;padding:12px 26px;border-radius:2px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;transition:all .4s ease;opacity:1 !important}
+.cta:hover{background:var(--ember);border-color:var(--ember);color:#fff !important}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;z-index:120}
+.nav-toggle span{width:26px;height:1.5px;background:var(--cream);transition:.4s}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);will-change:transform}
+.hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 70% 30%,rgba(22,16,14,.35),rgba(22,16,14,.9) 80%),linear-gradient(180deg,rgba(22,16,14,.5),rgba(22,16,14,.55))}
+.hero-inner{position:relative;z-index:2;width:100%;text-align:center}
+.hero .eyebrow{margin-bottom:26px}
+.hero h1{font-size:clamp(3.2rem,10vw,8.5rem);font-weight:400;letter-spacing:.01em}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top}
+.hero h1 .w i{display:inline-block;font-style:normal}
+.hero h1 em{font-style:italic;color:var(--ember)}
+.hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.2rem,2.4vw,1.7rem);color:var(--cream);opacity:.86;margin-top:24px;font-weight:400}
+.hero .actions{margin-top:42px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.btn-solid{display:inline-block;background:var(--ember);color:#fff;padding:14px 30px;border-radius:2px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;transition:transform .35s ease,background .3s}
+.btn-solid:hover{transform:translateY(-2px);background:#b8390f}
+.hero-foot{position:absolute;bottom:34px;left:0;right:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:0 32px;max-width:1240px;margin:0 auto;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.hero-foot .rate b{color:var(--brass);font-family:'Cormorant Garamond';font-size:1.1rem}
+
+.pad{padding:130px 0}
+.reveal{opacity:0;transform:translateY(34px)}
+.line-cover{overflow:hidden}
+.line-cover>*{display:block}
+
+/* INTRO / manifest */
+.intro{text-align:center;max-width:760px;margin:0 auto}
+.intro .eyebrow{margin-bottom:26px}
+.intro h2{font-size:clamp(2rem,5vw,3.8rem);font-weight:400}
+.intro h2 em{font-style:italic;color:var(--ember)}
+.intro p{color:var(--muted);margin-top:28px;font-size:1.12rem;line-height:1.9}
+.divider{width:1px;height:64px;background:var(--brass);margin:0 auto 40px;opacity:.5}
+
+/* FEATURE split */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.feature .ph{position:relative;min-height:560px;overflow:hidden}
+.feature .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feature .txt{padding:80px 70px;display:flex;flex-direction:column;justify-content:center;background:var(--bg2)}
+.feature .txt h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:400;margin:18px 0 24px}
+.feature .txt h2 em{font-style:italic;color:var(--ember)}
+.feature .txt p{color:var(--muted);margin-bottom:18px;line-height:1.9}
+
+/* MENU */
+.menu{background:var(--bg2)}
+.menu-top{text-align:center;margin-bottom:80px}
+.menu-top h2{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:400}
+.menu-top h2 em{font-style:italic;color:var(--ember)}
+.menu-top p{color:var(--muted);margin-top:14px;font-style:italic;font-family:'Cormorant Garamond';font-size:1.3rem}
+.menu-cols{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.mcat{margin-bottom:48px}
+.mcat .h{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.mcat .h h3{font-size:1.9rem;font-weight:500;color:var(--brass)}
+.mcat .h .dot{width:6px;height:6px;border-radius:50%;background:var(--ember)}
+.mcat .note{color:var(--muted);font-style:italic;font-family:'Cormorant Garamond';font-size:1.05rem;margin-bottom:22px}
+.item{padding:16px 0;border-bottom:1px solid var(--line)}
+.item .nm{font-family:'Cormorant Garamond';font-size:1.35rem;font-weight:500;color:var(--cream);display:flex;align-items:center;gap:10px}
+.item .nm .sp{font-family:'DM Sans';font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--ember);padding:3px 8px;border-radius:2px;font-weight:500}
+.item .ds{color:var(--muted);font-size:.94rem;margin-top:4px}
+
+/* COCKTAILS */
+.cocktails{position:relative}
+.cocktails .eyebrow{text-align:center;display:block;margin-bottom:22px}
+.cocktails h2{text-align:center;font-size:clamp(2.4rem,6vw,4.6rem);font-weight:400;margin-bottom:60px}
+.cocktails h2 em{font-style:italic;color:var(--ember)}
+.cock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cock{position:relative;border-radius:4px;overflow:hidden;min-height:420px;display:flex;align-items:flex-end}
+.cock img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.cock::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,16,14,0) 35%,rgba(22,16,14,.92) 100%)}
+.cock:hover img{transform:scale(1.07)}
+.cock .c-body{position:relative;z-index:2;padding:28px}
+.cock .c-body h4{font-size:1.6rem;font-weight:500;color:var(--cream)}
+.cock .c-body p{color:var(--cream);opacity:.78;font-size:.9rem;margin-top:6px}
+
+/* GALLERY */
+.gallery{background:var(--bg2)}
+.gallery .eyebrow{text-align:center;display:block;margin-bottom:22px}
+.gallery h2{text-align:center;font-size:clamp(2.2rem,5vw,4rem);font-weight:400;margin-bottom:56px}
+.gallery h2 em{font-style:italic;color:var(--ember)}
+.g-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:160px;gap:14px}
+.g-grid .gi{overflow:hidden;border-radius:4px}
+.g-grid .gi img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);filter:saturate(.92)}
+.g-grid .gi:hover img{transform:scale(1.08)}
+.g-grid .a{grid-column:span 3;grid-row:span 2}
+.g-grid .b{grid-column:span 3;grid-row:span 1}
+.g-grid .c{grid-column:span 2;grid-row:span 2}
+.g-grid .d{grid-column:span 2;grid-row:span 1}
+.g-grid .e{grid-column:span 2;grid-row:span 1}
+
+/* INFO */
+.info{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+.info .det{padding:66px 60px}
+.info h2{font-size:clamp(2rem,4vw,3rem);font-weight:400;margin-bottom:34px}
+.info h2 em{font-style:italic;color:var(--ember)}
+.hb{margin-bottom:30px}
+.hb .lbl{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:12px}
+.hrow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:.96rem}
+.hrow span:last-child{color:var(--muted)}
+.cl{display:flex;align-items:center;gap:12px;margin-top:12px;font-size:1.04rem}
+.cl .ico{color:var(--ember)}
+.info .map{position:relative;min-height:480px}
+.info .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.35) brightness(.85) contrast(1.05)}
+
+/* RESERVATION PANEL */
+.res-overlay{position:fixed;inset:0;background:rgba(10,7,6,.6);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:.4s;z-index:200}
+.res-overlay.open{opacity:1;visibility:visible}
+.res-panel{position:fixed;top:0;right:0;height:100vh;width:440px;max-width:92vw;background:var(--bg2);z-index:201;transform:translateX(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);padding:60px 48px;overflow-y:auto;border-left:1px solid var(--line)}
+.res-panel.open{transform:translateX(0)}
+.res-panel .x{position:absolute;top:24px;right:28px;font-size:1.6rem;cursor:pointer;color:var(--muted);background:none;border:0}
+.res-panel h3{font-size:2.2rem;font-weight:500;margin-bottom:8px}
+.res-panel h3 em{font-style:italic;color:var(--ember)}
+.res-panel .lead{color:var(--muted);margin-bottom:34px}
+.res-panel .row{display:flex;gap:12px;align-items:center;margin:18px 0;font-size:1.04rem}
+.res-panel .row .ico{color:var(--brass);width:22px}
+.res-panel .big-call{display:block;margin-top:32px;text-align:center;background:var(--ember);color:#fff;padding:16px;border-radius:2px;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;transition:background .3s}
+.res-panel .big-call:hover{background:#b8390f}
+.res-panel .hint{margin-top:26px;font-style:italic;font-family:'Cormorant Garamond';color:var(--muted);font-size:1.05rem;line-height:1.7}
+
+/* FOOTER */
+footer{padding:90px 0 40px;border-top:1px solid var(--line)}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:64px}
+.foot-brand{font-family:'Cormorant Garamond';font-size:2.6rem;font-weight:600}
+.foot-brand b{color:var(--ember);font-style:italic}
+footer .tag{color:var(--muted);margin-top:14px;max-width:38ch;font-style:italic;font-family:'Cormorant Garamond';font-size:1.15rem}
+.fc h5{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:18px}
+.fc a,.fc p{display:block;color:var(--muted);margin:10px 0;font-size:.94rem}
+.fc a:hover{color:var(--ember)}
+.fb{border-top:1px solid var(--line);padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:.82rem}
+.fb b{color:var(--brass)}
+
+@media(max-width:960px){
+  .feature,.menu-cols,.info{grid-template-columns:1fr}
+  .feature .txt{padding:54px 34px}
+  .feature .ph{min-height:380px}
+  .cock-grid{grid-template-columns:1fr}
+  .cock{min-height:340px}
+  .g-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:130px}
+  .g-grid .a,.g-grid .c{grid-column:span 2}
+  .g-grid .b,.g-grid .d,.g-grid .e{grid-column:span 2}
+  .info .det{padding:44px 30px}
+  .foot-grid{grid-template-columns:1fr;gap:36px}
+  .nav-links{position:fixed;inset:0;height:100vh;width:100%;background:var(--bg);flex-direction:column;justify-content:center;gap:32px;transform:translateX(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{font-size:1.3rem;font-family:'Cormorant Garamond'}
+  .nav-toggle{display:flex}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  .reveal{opacity:1 !important;transform:none !important}
+  .hero-bg img{transform:none !important}
+}
+</style>
+</head>
+<body>
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand">Peper<b>o</b>ncino</a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#intro">Konobar</a>
+      <a href="#menu">Kuhinja</a>
+      <a href="#cocktails">Bar</a>
+      <a href="#gallery">Galerija</a>
+      <a href="#info">Lokacija</a>
+      <a href="#" class="cta" id="openRes">Rezerviraj</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Izbornik"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=2000&q=80" alt="Moody bar interijer pri svjetlu svijeća" />
+  </div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Šibenik · Kitchen &amp; Bar · od 18h</p>
+    <h1>
+      <span class="w"><i>Večeri</i></span> <span class="w"><i>s</i></span> <em>iskrom</em><br>
+      <span class="w"><i>i</i></span> <span class="w"><i>okusom</i></span> <span class="w"><i>juga.</i></span>
+    </h1>
+    <p class="sub">Talijanska kuhinja i koktel bar pod kamenim svodovima šibenske jezgre.</p>
+    <div class="actions">
+      <a href="#" class="btn-solid" id="openRes2">Rezerviraj stol</a>
+      <a href="#menu" class="cta">Pogledaj meni</a>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <span>Mesarske stube 2</span>
+    <span class="rate"><b>4.8 ★</b> · 331 recenzija</span>
+  </div>
+</section>
+
+<section class="pad" id="intro">
+  <div class="wrap intro">
+    <div class="divider reveal"></div>
+    <p class="eyebrow reveal">Dobrodošli</p>
+    <h2 class="reveal">Mala papričica koja <em>oživi</em> svaku večer.</h2>
+    <p class="reveal">Peperoncino je ime te ljute talijanske papričice — i upravo to nosimo u svemu što radimo. Talijanska duša, mediteranske namirnice i bar koji ne staje. Pod kamenim svodovima Šibenika gradimo večeri koje se pamte: polako kuhane umake, tanjure za dijeljenje i koktele koji prate ritam noći.</p>
+  </div>
+</section>
+
+<section class="feature" id="story">
+  <div class="ph reveal"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=80" alt="Šef u kuhinji" /></div>
+  <div class="txt">
+    <p class="eyebrow reveal">Naša priča</p>
+    <h2 class="reveal">Talijanska duša,<br><em>šibenska</em> noć.</h2>
+    <p class="reveal">Nastali smo iz ljubavi prema talijanskoj kuhinji i želje da Šibeniku damo mjesto gdje se večera pretvara u događaj. Na Mesarskim stubama, u kamenoj jezgri koja diše stoljećima, otvorili smo vrata kuhinje i bara koji rade kao jedno.</p>
+    <p class="reveal">Biramo svježe, kuhamo s emocijom i serviramo bez žurbe. Naš bar pretvara mirne večeri u nezaboravne, a 4.8 zvjezdica od preko 330 gostiju govori da smo na pravom putu.</p>
+  </div>
+</section>
+
+<section class="menu pad" id="menu">
+  <div class="wrap">
+    <div class="menu-top">
+      <p class="eyebrow reveal">Iz kuhinje</p>
+      <h2 class="reveal">Pasta, more &amp; <em>plates za dijeljenje</em></h2>
+      <p class="reveal">Talijanski klasici s mediteranskom rukom.</p>
+    </div>
+    <div class="menu-cols">
+      <div>
+        <div class="mcat reveal">
+          <div class="h"><span class="dot"></span><h3>Za podijeliti</h3></div>
+          <p class="note">Sharing plates — za stol koji voli dijeliti.</p>
+          <div class="item"><div class="nm">Burrata Pugliese</div><div class="ds">Kremasta burrata, marinirana rajčica, bosiljak i hrskavi kruh.</div></div>
+          <div class="item"><div class="nm">Carpaccio od hobotnice</div><div class="ds">Tanko narezana hobotnica, limun, kapari i pelin-ulje.</div></div>
+          <div class="item"><div class="nm">Tartare od tune <span class="sp">ljuto</span></div><div class="ds">Sirova tuna, avokado, sezam i tračak peperoncina.</div></div>
+          <div class="item"><div class="nm">Tagliere Mediterraneo</div><div class="ds">Pršut, zreli sirevi, marmelada i domaći kruh.</div></div>
+        </div>
+        <div class="mcat reveal">
+          <div class="h"><span class="dot"></span><h3>More</h3></div>
+          <p class="note">Iz Jadrana na tanjur.</p>
+          <div class="item"><div class="nm">Brancin na žaru</div><div class="ds">Cijeli brancin, blitva, krumpir i emulzija limuna i kapara.</div></div>
+          <div class="item"><div class="nm">Rižoto crni s lignjama</div><div class="ds">Kremasti rižoto od sipina crnila s domaćim lignjama.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="mcat reveal">
+          <div class="h"><span class="dot"></span><h3>Pasta</h3></div>
+          <p class="note">Tijesto rađeno svaki dan.</p>
+          <div class="item"><div class="nm">Spaghetti alla Peperoncino <span class="sp">signature</span></div><div class="ds">Aglio, olio e peperoncino — naš potpis u tanjuru.</div></div>
+          <div class="item"><div class="nm">Tagliatelle frutti di mare</div><div class="ds">Svježa tjestenina, škampi, školjke i lignje u bijelom vinu.</div></div>
+          <div class="item"><div class="nm">Gnocchi tartufati</div><div class="ds">Domaći njoki, kremasti sir i svježi tartuf.</div></div>
+          <div class="item"><div class="nm">Rigatoni Amatriciana</div><div class="ds">Guanciale, pelati, pecorino i nota ljutoga.</div></div>
+          <div class="item"><div class="nm">Cacio e Pepe</div><div class="ds">Pecorino romano i svježe mljeveni papar.</div></div>
+        </div>
+        <div class="mcat reveal">
+          <div class="h"><span class="dot"></span><h3>Dolci</h3></div>
+          <p class="note">Slatki finale.</p>
+          <div class="item"><div class="nm">Tiramisu della casa</div><div class="ds">Mascarpone, espresso i kakao — rađen svaki dan.</div></div>
+          <div class="item"><div class="nm">Panna cotta &amp; šumsko voće</div><div class="ds">Svilenkasta panna cotta s coulisom od šumskog voća.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cocktails pad" id="cocktails">
+  <div class="wrap">
+    <p class="eyebrow reveal">Iza šanka</p>
+    <h2 class="reveal">Autorski <em>kokteli</em></h2>
+    <div class="cock-grid">
+      <div class="cock reveal"><img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=900&q=80" alt="Negroni" /><div class="c-body"><h4>Negroni d'Autore</h4><p>Gin, Campari i crveni vermut — talijanska gorčina u balansu.</p></div></div>
+      <div class="cock reveal"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=900&q=80" alt="Spicy margarita" /><div class="c-body"><h4>Peperoncino Margarita</h4><p>Tequila, lime, agava i obod od ljute papričice.</p></div></div>
+      <div class="cock reveal"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80" alt="Espresso martini" /><div class="c-body"><h4>Espresso Martini</h4><p>Vodka, svježi espresso i kavin liker — za nastavak večeri.</p></div></div>
+      <div class="cock reveal"><img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=900&q=80" alt="Spritz" /><div class="c-body"><h4>Adriatico Spritz</h4><p>Aperol, pjenušac i mediteranske trave — okus terase.</p></div></div>
+      <div class="cock reveal"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=80" alt="Basil smash" /><div class="c-body"><h4>Basilico Smash</h4><p>Gin, svježi bosiljak i limun — mediteranska svježina.</p></div></div>
+      <div class="cock reveal"><img src="https://images.unsplash.com/photo-1605270012917-bf157c5a9541?auto=format&fit=crop&w=900&q=80" alt="Paloma" /><div class="c-body"><h4>Chili Paloma</h4><p>Tequila, grejp, soda i blagi peperoncino kick.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery pad" id="gallery">
+  <div class="wrap">
+    <p class="eyebrow reveal">Ambijent</p>
+    <h2 class="reveal">Svjetlo, kamen &amp; <em>okus</em></h2>
+    <div class="g-grid">
+      <div class="gi a reveal"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1100&q=80" alt="Restoran ambijent" /></div>
+      <div class="gi b reveal"><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80" alt="Pasta" /></div>
+      <div class="gi d reveal"><img src="https://images.unsplash.com/photo-1583032015879-e5022cb87c3b?auto=format&fit=crop&w=700&q=80" alt="Papričice" /></div>
+      <div class="gi e reveal"><img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=700&q=80" alt="Koktel" /></div>
+      <div class="gi c reveal"><img src="https://images.unsplash.com/photo-1485921325833-c519f76c4927?auto=format&fit=crop&w=800&q=80" alt="Jelo" /></div>
+      <div class="gi d reveal"><img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=700&q=80" alt="Bar" /></div>
+      <div class="gi e reveal"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=700&q=80" alt="Desert" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="info">
+  <div class="wrap">
+    <div class="info">
+      <div class="det">
+        <p class="eyebrow reveal" style="margin-bottom:18px">Posjeti nas</p>
+        <h2 class="reveal">Mesarske stube 2,<br><em>Šibenik</em></h2>
+        <div class="hb reveal">
+          <span class="lbl">Kuhinja</span>
+          <div class="hrow"><span>Pon — Čet</span><span>12:00 — 23:00</span></div>
+          <div class="hrow"><span>Pet — Sub</span><span>12:00 — 00:00</span></div>
+          <div class="hrow"><span>Nedjelja</span><span>12:00 — 23:00</span></div>
+        </div>
+        <div class="hb reveal">
+          <span class="lbl">Bar</span>
+          <div class="hrow"><span>Pon — Čet</span><span>11:00 — 01:00</span></div>
+          <div class="hrow"><span>Pet — Sub</span><span>11:00 — 02:00</span></div>
+          <div class="hrow"><span>Nedjelja</span><span>11:00 — 01:00</span></div>
+        </div>
+        <div class="cl reveal"><span class="ico">☎</span><a href="tel:+385915539369">+385 91 553 9369</a></div>
+        <div class="cl reveal"><span class="ico">⌖</span><span>22000 Šibenik, Hrvatska</span></div>
+      </div>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=Peperoncino+Kitchen+Bar+Sibenik&output=embed" loading="lazy" title="Karta — Peperoncino Kitchen & Bar"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Peper<b>o</b>ncino</div>
+        <p class="tag">Kitchen &amp; Bar — talijanska duša, šibenska noć. Večeri uz pastu, more i autorske koktele.</p>
+      </div>
+      <div class="fc">
+        <h5>Kontakt</h5>
+        <a href="tel:+385915539369">+385 91 553 9369</a>
+        <p>Mesarske stube 2<br>22000 Šibenik</p>
+      </div>
+      <div class="fc">
+        <h5>Otkrij</h5>
+        <a href="#menu">Kuhinja</a>
+        <a href="#cocktails">Bar &amp; kokteli</a>
+        <a href="#story">Naša priča</a>
+        <a href="#" id="openRes3">Rezervacije</a>
+      </div>
+    </div>
+    <div class="fb">
+      <span>© 2026 Peperoncino Kitchen &amp; Bar · Šibenik</span>
+      <span>Ocjena <b>4.8 ★</b> · 331 recenzija · TripAdvisor</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Reservation slide-in -->
+<div class="res-overlay" id="resOverlay"></div>
+<aside class="res-panel" id="resPanel" aria-hidden="true">
+  <button class="x" id="resClose" aria-label="Zatvori">×</button>
+  <h3>Rezerviraj <em>stol</em></h3>
+  <p class="lead">Javite se i čuvamo vam mjesto pod našim svodovima.</p>
+  <div class="row"><span class="ico">☎</span><a href="tel:+385915539369">+385 91 553 9369</a></div>
+  <div class="row"><span class="ico">⌖</span><span>Mesarske stube 2, Šibenik</span></div>
+  <div class="row"><span class="ico">◷</span><span>Kuhinja 12:00 — 23:00 · Bar do 02:00</span></div>
+  <a href="tel:+385915539369" class="big-call">Nazovi za rezervaciju</a>
+  <p class="hint">Za veće društvo i posebne prigode preporučujemo raniju najavu. Veselimo se vašoj večeri.</p>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const header=document.getElementById('header');
+const onScroll=()=>header.classList.toggle('solid',window.scrollY>60);
+onScroll();window.addEventListener('scroll',onScroll);
+
+const toggle=document.getElementById('navToggle');
+const navlinks=document.getElementById('navlinks');
+toggle.addEventListener('click',()=>navlinks.classList.toggle('open'));
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+
+/* Reservation panel */
+const overlay=document.getElementById('resOverlay');
+const panel=document.getElementById('resPanel');
+function openRes(e){if(e)e.preventDefault();overlay.classList.add('open');panel.classList.add('open');panel.setAttribute('aria-hidden','false');}
+function closeRes(){overlay.classList.remove('open');panel.classList.remove('open');panel.setAttribute('aria-hidden','true');}
+['openRes','openRes2','openRes3'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('click',openRes);});
+document.getElementById('resClose').addEventListener('click',closeRes);
+overlay.addEventListener('click',closeRes);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRes();});
+
+if(!reduced){
+  const lenis=new Lenis({lerp:0.09,smoothWheel:true});
+  function raf(t){lenis.raf(t);requestAnimationFrame(raf);}
+  requestAnimationFrame(raf);
+  gsap.registerPlugin(ScrollTrigger);
+  lenis.on('scroll',ScrollTrigger.update);
+
+  /* Hero zoom-on-load + word reveal */
+  gsap.timeline({delay:.25})
+    .to('.hero-bg img',{scale:1,duration:2.2,ease:'power2.out'},0)
+    .from('.hero h1 .w i',{yPercent:115,duration:1.1,ease:'power4.out',stagger:.09},.3)
+    .from('.hero h1 em',{opacity:0,duration:1.2,ease:'power2.out'},'-=.6')
+    .from('.hero .eyebrow,.hero .sub,.hero .actions',{y:24,opacity:0,duration:.9,ease:'power3.out',stagger:.14},'-=.8')
+    .from('.hero-foot',{opacity:0,duration:1},'-=.5');
+
+  gsap.utils.toArray('.reveal').forEach(el=>{
+    gsap.to(el,{opacity:1,y:0,duration:1.1,ease:'power3.out',
+      scrollTrigger:{trigger:el,start:'top 90%'}});
+  });
+}else{
+  document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity=1;el.style.transform='none';});
+}
+</script>
+</body>
+</html>
